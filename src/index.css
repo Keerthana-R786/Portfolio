@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-ink-950 text-ink-100 font-sans;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-accent-light;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-ink-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-xs tracking-[0.2em] uppercase text-accent;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-semibold text-ink-50 tracking-tight;
+  }
+
+  .section-divider {
+    @apply w-12 h-px bg-accent mt-4 mb-8;
+  }
+
+  .card-base {
+    @apply bg-ink-900 border border-ink-800 rounded-xl p-6 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:border-accent/40 hover:bg-ink-800/80 hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-accent text-ink-950 font-medium rounded-lg 
+           hover:bg-accent-light transition-all duration-200 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-ink-700 text-ink-200 font-medium rounded-lg 
+           hover:border-accent/60 hover:text-accent transition-all duration-200 active:scale-95;
+  }
+
+  .tag {
+    @apply font-mono text-xs px-2.5 py-1 rounded bg-ink-800 border border-ink-700 text-ink-300;
+  }
+
+  .nav-link {
+    @apply font-mono text-sm text-ink-400 hover:text-accent transition-colors duration-200 tracking-wide;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-light via-accent to-accent-dark bg-clip-text text-transparent;
+  }
+
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .grid-dot-bg {
+    background-image: radial-gradient(circle, rgba(201,169,110,0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
