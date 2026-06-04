@@ -46,7 +46,7 @@ export default function Contact() {
     {
       label: 'LinkedIn',
       value: 'Keerthana R',
-      href: 'https://www.linkedin.com/in/keerthana-r',
+      href: 'https://www.linkedin.com/in/keerthana-r786/',
     },
   ]
 
